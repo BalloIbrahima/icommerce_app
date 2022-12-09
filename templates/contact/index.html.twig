@@ -1,3 +1,23 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/Users/owner/Desktop/TechnoLab/Synfony/TP/icommerce_app/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/Users/owner/Desktop/TechnoLab/Synfony/TP/icommerce_app/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %} #}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +29,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{{asset('assets/img/favicon.ico')}}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,11 +39,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{asset('assets/lib/animate/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/lib/animate/animate.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -307,7 +328,7 @@
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
+                <img class="img-fluid" src="{{asset('assets/img/payments.png')}}" alt="">
             </div>
         </div>
     </div>
@@ -321,15 +342,15 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{asset('assets/lib/easing/easing.min.js')}}"></script>
+    <script src="{{asset('assets/lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
     <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+    <script src="{{asset('assets/mail/jqBootstrapValidation.min.js')}}"></script>
+    <script src="{{asset('assets/mail/contact.js')}}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
 </body>
 
 </html>

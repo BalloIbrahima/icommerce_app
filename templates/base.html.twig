@@ -28,6 +28,7 @@
 
 <body>
     <!-- Topbar Start -->
+    {% block navbar %}
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
@@ -172,10 +173,12 @@
             </div>
         </div>
     </div>
+    {% endblock %}
     <!-- Navbar End -->
 
 
     <!-- Carousel Start -->
+    {% block carousel %}
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
             <div class="col-lg-8">
@@ -239,10 +242,12 @@
             </div>
         </div>
     </div>
+    {% endblock %}
     <!-- Carousel End -->
 
 
     <!-- Featured Start -->
+    {% block featured %}
     <div class="container-fluid pt-5">
         <div class="row px-xl-5 pb-3">
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
@@ -271,9 +276,10 @@
             </div>
         </div>
     </div>
+    {% endblock %}
     <!-- Featured End -->
 
-
+    {% block categories %}
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
@@ -436,10 +442,12 @@
             </div>
         </div>
     </div>
+    {% endblock %}
     <!-- Categories End -->
 
 
     <!-- Products Start -->
+    {% block content %}
     <div class="container-fluid pt-5 pb-3">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Featured Products</span></h2>
         <div class="row px-xl-5">
@@ -950,6 +958,8 @@
             </div>
         </div>
     </div>
+    {% endblock %}
+
     <!-- Vendor End -->
 
 

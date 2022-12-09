@@ -15,4 +15,21 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+    // #[Route('/contact', name: 'app_contact')]
+    // public function contact(): Response
+    // {
+    //     return $this->render('contact.html.twig', [
+    //         'controller_name' => 'HomeController',
+    //     ]);
+    // }
+
+
+    // #[Route('/shop', name: 'shop')]
+    // public function shop(): Response
+    // {
+    //     return $this->render('shop.html.twig', [
+    //         'controller_name' => 'HomeController',
+    //     ]);
+    // }
 }
