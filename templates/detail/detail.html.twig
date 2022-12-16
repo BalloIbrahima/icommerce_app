@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <!-- Topbar Start -->
+    {# <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
@@ -172,8 +172,9 @@
             </div>
         </div>
     </div>
-    <!-- Navbar End -->
+    <!-- Navbar End --> #}
 
+    {% block content %}
 
     <!-- Breadcrumb Start -->
     <div class="container-fluid">
@@ -570,9 +571,10 @@
         </div>
     </div>
     <!-- Products End -->
+    {% endblock %}
 
 
-    <!-- Footer Start -->
+    {# <!-- Footer Start -->
     <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
@@ -641,7 +643,7 @@
             </div>
         </div>
     </div>
-    <!-- Footer End -->
+    <!-- Footer End --> #}
 
 
     <!-- Back to Top -->

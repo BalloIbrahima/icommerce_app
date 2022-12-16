@@ -48,7 +48,7 @@
 </head>
 
 <body>
-    <!-- Topbar Start -->
+    {# <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
@@ -166,17 +166,17 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
-                            <a href="shop.html" class="nav-item nav-link">Shop</a>
-                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
+                            <a href={{path('app_home')}} class="nav-item nav-link">Home</a>
+                            <a href={{path('app_shop')}} class="nav-item nav-link">Shop</a>
+                            <a href={{path('app_detail')}} class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Shopping Cart</a>
-                                    <a href="checkout.html" class="dropdown-item">Checkout</a>
+                                    <a href={{path('app_cart')}} class="dropdown-item">Shopping Cart</a>
+                                    <a href={{path('app_checkout')}} class="dropdown-item">Checkout</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                            <a href={{path('app_contact')}} class="nav-item nav-link active">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                             <a href="" class="btn px-0">
@@ -193,8 +193,10 @@
             </div>
         </div>
     </div>
-    <!-- Navbar End -->
+    <!-- Navbar End --> #}
 
+
+    {% block content %}
 
     <!-- Breadcrumb Start -->
     <div class="container-fluid">
@@ -261,9 +263,10 @@
         </div>
     </div>
     <!-- Contact End -->
+    {% endblock %}
 
 
-    <!-- Footer Start -->
+    {# <!-- Footer Start -->
     <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
@@ -332,7 +335,7 @@
             </div>
         </div>
     </div>
-    <!-- Footer End -->
+    <!-- Footer End --> #}
 
 
     <!-- Back to Top -->
