@@ -42,10 +42,36 @@ class Product
     #[ORM\OneToMany(mappedBy: 'product_id', targetEntity: Photo::class)]
     private Collection $photos;
 
+    #[ORM\OneToMany(mappedBy: 'product', targetEntity: OrdersDetails::class)]
+    private Collection $ordersDetails;
+
+    #[ORM\OneToMany(mappedBy: 'products', targetEntity: ArrivalsDetails::class)]
+    private Collection $arrivalsDetails;
+
+    #[ORM\OneToMany(mappedBy: 'products', targetEntity: Images::class)]
+    private Collection $images;
+
+    #[ORM\OneToMany(mappedBy: 'products', targetEntity: Reviews::class)]
+    private Collection $reviews;
+
+    #[ORM\OneToMany(mappedBy: 'product', targetEntity: Likes::class)]
+    private Collection $likes;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $stock = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $active = null;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
         $this->photos = new ArrayCollection();
+        $this->ordersDetails = new ArrayCollection();
+        $this->arrivalsDetails = new ArrayCollection();
+        $this->images = new ArrayCollection();
+        $this->reviews = new ArrayCollection();
+        $this->likes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -193,6 +219,180 @@ class Product
                 $photo->setProductId(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, OrdersDetails>
+     */
+    public function getOrdersDetails(): Collection
+    {
+        return $this->ordersDetails;
+    }
+
+    public function addOrdersDetail(OrdersDetails $ordersDetail): self
+    {
+        if (!$this->ordersDetails->contains($ordersDetail)) {
+            $this->ordersDetails->add($ordersDetail);
+            $ordersDetail->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrdersDetail(OrdersDetails $ordersDetail): self
+    {
+        if ($this->ordersDetails->removeElement($ordersDetail)) {
+            // set the owning side to null (unless already changed)
+            if ($ordersDetail->getProduct() === $this) {
+                $ordersDetail->setProduct(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ArrivalsDetails>
+     */
+    public function getArrivalsDetails(): Collection
+    {
+        return $this->arrivalsDetails;
+    }
+
+    public function addArrivalsDetail(ArrivalsDetails $arrivalsDetail): self
+    {
+        if (!$this->arrivalsDetails->contains($arrivalsDetail)) {
+            $this->arrivalsDetails->add($arrivalsDetail);
+            $arrivalsDetail->setProducts($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArrivalsDetail(ArrivalsDetails $arrivalsDetail): self
+    {
+        if ($this->arrivalsDetails->removeElement($arrivalsDetail)) {
+            // set the owning side to null (unless already changed)
+            if ($arrivalsDetail->getProducts() === $this) {
+                $arrivalsDetail->setProducts(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Images>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Images $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setProducts($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Images $image): self
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getProducts() === $this) {
+                $image->setProducts(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reviews>
+     */
+    public function getReviews(): Collection
+    {
+        return $this->reviews;
+    }
+
+    public function addReview(Reviews $review): self
+    {
+        if (!$this->reviews->contains($review)) {
+            $this->reviews->add($review);
+            $review->setProducts($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReview(Reviews $review): self
+    {
+        if ($this->reviews->removeElement($review)) {
+            // set the owning side to null (unless already changed)
+            if ($review->getProducts() === $this) {
+                $review->setProducts(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Likes>
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(Likes $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes->add($like);
+            $like->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(Likes $like): self
+    {
+        if ($this->likes->removeElement($like)) {
+            // set the owning side to null (unless already changed)
+            if ($like->getProduct() === $this) {
+                $like->setProduct(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getStock(): ?int
+    {
+        return $this->stock;
+    }
+
+    public function setStock(?int $stock): self
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
+    public function isActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(?bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }
